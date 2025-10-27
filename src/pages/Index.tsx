@@ -48,7 +48,7 @@ const Index = () => {
                 Ведущий свадеб и торжеств
               </div>
               <h1 className="text-5xl md:text-7xl font-bold text-gray-900 leading-tight">
-                Евгений<br />
+                Евгений Бондаренко<br />
                 <span className="text-rose-600">Ваш незабываемый праздник</span>
               </h1>
               <p className="text-xl text-gray-600 leading-relaxed">
