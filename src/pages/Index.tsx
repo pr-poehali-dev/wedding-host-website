@@ -13,7 +13,7 @@ const Index = () => {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     toast({
-      title: "Заявка отправлена!",
+      title: "Заявка отправлена",
       description: "Я свяжусь с вами в ближайшее время",
     });
     setFormData({ name: '', phone: '', message: '' });
@@ -43,199 +43,181 @@ const Index = () => {
   const portfolio = [
     {
       title: "Свадьба Анны и Дмитрия",
-      location: "Подмосковье, 2024",
+      location: "Подмосковье",
       guests: "150 гостей",
+      year: "2024",
+      description: "Классическая элегантная свадьба с элементами современного стиля",
       image: "https://cdn.poehali.dev/projects/7b019890-aeec-4e6d-a192-b6a1e01e77db/files/b2c6ec66-684f-47bf-a7b5-8d03cf87de1a.jpg"
     },
     {
       title: "Свадьба Марии и Александра",
-      location: "Москва, 2024",
+      location: "Москва",
       guests: "120 гостей",
+      year: "2024",
+      description: "Яркое празднование с интерактивными конкурсами и сюрпризами",
       image: "https://cdn.poehali.dev/projects/7b019890-aeec-4e6d-a192-b6a1e01e77db/files/a9ad3202-93e8-43c0-8899-19e36d6b95db.jpg"
+    },
+    {
+      title: "Свадьба Елены и Сергея",
+      location: "Санкт-Петербург",
+      guests: "200 гостей",
+      year: "2023",
+      description: "Масштабное торжество в историческом особняке",
+      image: "https://cdn.poehali.dev/projects/7b019890-aeec-4e6d-a192-b6a1e01e77db/files/2fc3e76b-b1c8-4675-9bf3-312b4ac671f5.jpg"
     }
   ];
 
   return (
     <div className="min-h-screen">
-      <header className="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-md border-b border-border">
-        <nav className="container mx-auto px-4 py-4 flex justify-between items-center">
-          <h1 className="text-2xl font-bold bg-gradient-to-r from-primary via-secondary to-accent bg-clip-text text-transparent">
-            Ведущий Свадеб
-          </h1>
-          <div className="hidden md:flex gap-6">
-            <a href="#promo" className="hover:text-primary transition-colors">Главная</a>
-            <a href="#about" className="hover:text-primary transition-colors">Обо мне</a>
-            <a href="#portfolio" className="hover:text-primary transition-colors">Портфолио</a>
-            <a href="#testimonials" className="hover:text-primary transition-colors">Отзывы</a>
-            <a href="#contact" className="hover:text-primary transition-colors">Контакты</a>
+      <header className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm border-b border-border/50">
+        <nav className="container mx-auto px-6 py-6 flex justify-between items-center">
+          <h1 className="text-xl tracking-wider font-light">ВЕДУЩИЙ СВАДЕБ</h1>
+          <div className="hidden md:flex gap-12 text-sm tracking-wide">
+            <a href="#about" className="hover:text-accent transition-colors">О себе</a>
+            <a href="#portfolio" className="hover:text-accent transition-colors">Портфолио</a>
+            <a href="#testimonials" className="hover:text-accent transition-colors">Отзывы</a>
+            <a href="#contact" className="hover:text-accent transition-colors">Контакты</a>
           </div>
-          <Button size="sm" className="bg-gradient-to-r from-primary to-secondary hover:opacity-90">
-            Связаться
-          </Button>
         </nav>
       </header>
 
-      <section id="promo" className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
-        <div className="absolute inset-0 bg-gradient-to-br from-primary/20 via-secondary/20 to-accent/20 animate-gradient bg-[length:400%_400%]" />
-        <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PHBhdHRlcm4gaWQ9ImdyaWQiIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCIgcGF0dGVyblVuaXRzPSJ1c2VyU3BhY2VPblVzZSI+PHBhdGggZD0iTSAxMCAwIEwgMCAwIDAgMTAiIGZpbGw9Im5vbmUiIHN0cm9rZT0iIzg4ODgiIHN0cm9rZS13aWR0aD0iMSIgb3BhY2l0eT0iMC4xIi8+PC9wYXR0ZXJuPjwvZGVmcz48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSJ1cmwoI2dyaWQpIi8+PC9zdmc+')] opacity-30" />
-        
-        <div className="container mx-auto px-4 relative z-10">
-          <div className="grid md:grid-cols-2 gap-12 items-center">
-            <div className="animate-fade-in-up">
-              <h2 className="text-5xl md:text-7xl font-bold mb-6 leading-tight">
-                Сделаю вашу свадьбу{' '}
-                <span className="bg-gradient-to-r from-primary via-secondary to-accent bg-clip-text text-transparent">
-                  незабываемой
-                </span>
-              </h2>
-              <p className="text-xl mb-8 text-muted-foreground">
-                Профессиональное ведение свадеб с гарантией отличного настроения. 
-                Более 200 счастливых пар доверили мне свой самый важный день.
-              </p>
-              <div className="flex flex-wrap gap-4">
-                <Button size="lg" className="bg-gradient-to-r from-primary to-secondary hover:opacity-90 text-lg px-8">
-                  Забронировать дату
-                </Button>
-                <Button size="lg" variant="outline" className="text-lg px-8">
-                  Посмотреть портфолио
-                </Button>
-              </div>
-              <div className="mt-8 flex gap-8">
-                <div>
-                  <div className="text-4xl font-bold text-primary">200+</div>
-                  <div className="text-sm text-muted-foreground">Проведенных свадеб</div>
-                </div>
-                <div>
-                  <div className="text-4xl font-bold text-secondary">5.0</div>
-                  <div className="text-sm text-muted-foreground">Средний рейтинг</div>
-                </div>
-                <div>
-                  <div className="text-4xl font-bold text-accent">8+</div>
-                  <div className="text-sm text-muted-foreground">Лет опыта</div>
-                </div>
-              </div>
-            </div>
-            <div className="relative animate-scale-in">
-              <div className="absolute -inset-4 bg-gradient-to-r from-primary via-secondary to-accent rounded-3xl opacity-20 blur-2xl animate-pulse" />
-              <img 
-                src="https://cdn.poehali.dev/projects/7b019890-aeec-4e6d-a192-b6a1e01e77db/files/2fc3e76b-b1c8-4675-9bf3-312b4ac671f5.jpg"
-                alt="Ведущий свадеб"
-                className="relative rounded-3xl shadow-2xl w-full animate-float"
-              />
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section id="about" className="py-24 bg-muted/30">
-        <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto text-center mb-16 animate-fade-in">
-            <h2 className="text-4xl md:text-5xl font-bold mb-6">Обо мне</h2>
-            <p className="text-xl text-muted-foreground">
-              Профессиональный ведущий с 8-летним опытом создания идеальных праздников
+      <section id="promo" className="relative min-h-screen flex items-center justify-center pt-24 pb-32">
+        <div className="container mx-auto px-6">
+          <div className="max-w-4xl mx-auto text-center animate-fade-in-up">
+            <h2 className="text-6xl md:text-8xl mb-8 leading-tight font-light tracking-tight">
+              Превращаю свадьбы<br />в произведения искусства
+            </h2>
+            <p className="text-xl md:text-2xl mb-12 text-muted-foreground font-light max-w-2xl mx-auto">
+              Профессиональное ведение торжеств с безупречным вкусом и вниманием к деталям
             </p>
-          </div>
-          
-          <div className="grid md:grid-cols-3 gap-8">
-            <Card className="p-8 text-center hover:shadow-xl transition-all duration-300 hover:scale-105 animate-fade-in">
-              <div className="w-16 h-16 mx-auto mb-6 bg-gradient-to-br from-primary to-secondary rounded-2xl flex items-center justify-center">
-                <Icon name="Sparkles" size={32} className="text-white" />
-              </div>
-              <h3 className="text-2xl font-bold mb-4">Энергия и Харизма</h3>
-              <p className="text-muted-foreground">
-                Создаю атмосферу праздника с первых минут. Заряжаю энергией каждого гостя!
-              </p>
-            </Card>
-
-            <Card className="p-8 text-center hover:shadow-xl transition-all duration-300 hover:scale-105 animate-fade-in [animation-delay:200ms]">
-              <div className="w-16 h-16 mx-auto mb-6 bg-gradient-to-br from-secondary to-accent rounded-2xl flex items-center justify-center">
-                <Icon name="Users" size={32} className="text-white" />
-              </div>
-              <h3 className="text-2xl font-bold mb-4">Индивидуальный Подход</h3>
-              <p className="text-muted-foreground">
-                Разрабатываю уникальный сценарий под ваши пожелания и особенности гостей
-              </p>
-            </Card>
-
-            <Card className="p-8 text-center hover:shadow-xl transition-all duration-300 hover:scale-105 animate-fade-in [animation-delay:400ms]">
-              <div className="w-16 h-16 mx-auto mb-6 bg-gradient-to-br from-accent to-primary rounded-2xl flex items-center justify-center">
-                <Icon name="Trophy" size={32} className="text-white" />
-              </div>
-              <h3 className="text-2xl font-bold mb-4">Профессионализм</h3>
-              <p className="text-muted-foreground">
-                Современное оборудование, отточенные навыки и безупречная репутация
-              </p>
-            </Card>
-          </div>
-        </div>
-      </section>
-
-      <section id="portfolio" className="py-24">
-        <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto text-center mb-16 animate-fade-in">
-            <h2 className="text-4xl md:text-5xl font-bold mb-6">Портфолио</h2>
-            <p className="text-xl text-muted-foreground">
-              Примеры моих работ — счастливые моменты, которые я помог создать
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-2 gap-8">
-            {portfolio.map((item, idx) => (
-              <Card key={idx} className="overflow-hidden group hover:shadow-2xl transition-all duration-300 animate-fade-in">
-                <div className="relative overflow-hidden">
-                  <img 
-                    src={item.image}
-                    alt={item.title}
-                    className="w-full h-80 object-cover group-hover:scale-110 transition-transform duration-500"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                </div>
-                <div className="p-6">
-                  <h3 className="text-2xl font-bold mb-2">{item.title}</h3>
-                  <div className="flex items-center gap-4 text-muted-foreground">
-                    <div className="flex items-center gap-2">
-                      <Icon name="MapPin" size={16} />
-                      <span>{item.location}</span>
-                    </div>
-                    <div className="flex items-center gap-2">
-                      <Icon name="Users" size={16} />
-                      <span>{item.guests}</span>
-                    </div>
-                  </div>
-                </div>
-              </Card>
-            ))}
-          </div>
-
-          <div className="text-center mt-12">
-            <Button size="lg" variant="outline" className="text-lg px-8">
-              Посмотреть больше работ
+            <Button 
+              size="lg" 
+              className="text-base px-12 py-6 rounded-none bg-primary hover:bg-secondary transition-all duration-300"
+            >
+              Обсудить вашу свадьбу
             </Button>
           </div>
         </div>
       </section>
 
-      <section id="testimonials" className="py-24 bg-muted/30">
-        <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto text-center mb-16 animate-fade-in">
-            <h2 className="text-4xl md:text-5xl font-bold mb-6">Отзывы</h2>
-            <p className="text-xl text-muted-foreground">
-              Что говорят пары, чьи свадьбы я провел
-            </p>
+      <section id="about" className="py-32 border-t border-border/50">
+        <div className="container mx-auto px-6">
+          <div className="grid md:grid-cols-2 gap-20 items-center max-w-6xl mx-auto">
+            <div className="relative animate-fade-in">
+              <img 
+                src="https://cdn.poehali.dev/projects/7b019890-aeec-4e6d-a192-b6a1e01e77db/files/2fc3e76b-b1c8-4675-9bf3-312b4ac671f5.jpg"
+                alt="Ведущий"
+                className="w-full aspect-[3/4] object-cover grayscale hover:grayscale-0 transition-all duration-700"
+              />
+            </div>
+            <div className="animate-fade-in">
+              <p className="text-sm tracking-widest text-muted-foreground mb-6">О СЕБЕ</p>
+              <h3 className="text-5xl mb-8 font-light leading-tight">
+                Создаю атмосферу,<br />которую запомнят
+              </h3>
+              <div className="space-y-6 text-lg text-muted-foreground font-light leading-relaxed">
+                <p>
+                  Более 8 лет я создаю незабываемые свадебные торжества для пар, 
+                  которые ценят качество, стиль и внимание к деталям.
+                </p>
+                <p>
+                  Моя философия проста: каждая свадьба уникальна, и моя задача — 
+                  раскрыть её индивидуальность через продуманный сценарий и безупречное исполнение.
+                </p>
+                <p>
+                  Работаю с профессиональным оборудованием, постоянно совершенствую мастерство 
+                  и никогда не повторяюсь — для вас будет создан уникальный праздник.
+                </p>
+              </div>
+              <div className="grid grid-cols-3 gap-8 mt-12 pt-12 border-t border-border/50">
+                <div>
+                  <div className="text-4xl font-light mb-2">200+</div>
+                  <div className="text-sm text-muted-foreground tracking-wide">Свадеб</div>
+                </div>
+                <div>
+                  <div className="text-4xl font-light mb-2">8</div>
+                  <div className="text-sm text-muted-foreground tracking-wide">Лет опыта</div>
+                </div>
+                <div>
+                  <div className="text-4xl font-light mb-2">5.0</div>
+                  <div className="text-sm text-muted-foreground tracking-wide">Рейтинг</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="portfolio" className="py-32 bg-muted/30 border-y border-border/50">
+        <div className="container mx-auto px-6">
+          <div className="text-center mb-20 animate-fade-in">
+            <p className="text-sm tracking-widest text-muted-foreground mb-4">ПОРТФОЛИО</p>
+            <h2 className="text-5xl md:text-6xl font-light">Избранные работы</h2>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="max-w-6xl mx-auto space-y-32">
+            {portfolio.map((item, idx) => (
+              <div 
+                key={idx} 
+                className={`grid md:grid-cols-2 gap-12 items-center animate-fade-in ${
+                  idx % 2 === 1 ? 'md:grid-flow-dense' : ''
+                }`}
+              >
+                <div className={idx % 2 === 1 ? 'md:col-start-2' : ''}>
+                  <div className="relative group overflow-hidden">
+                    <img 
+                      src={item.image}
+                      alt={item.title}
+                      className="w-full aspect-[4/5] object-cover grayscale group-hover:grayscale-0 transition-all duration-700"
+                    />
+                  </div>
+                </div>
+                <div className={`space-y-6 ${idx % 2 === 1 ? 'md:col-start-1 md:row-start-1' : ''}`}>
+                  <div>
+                    <p className="text-sm tracking-widest text-muted-foreground mb-2">{item.year}</p>
+                    <h3 className="text-4xl font-light mb-4">{item.title}</h3>
+                    <p className="text-lg text-muted-foreground font-light leading-relaxed mb-6">
+                      {item.description}
+                    </p>
+                    <div className="flex gap-8 text-sm text-muted-foreground">
+                      <div className="flex items-center gap-2">
+                        <Icon name="MapPin" size={16} />
+                        <span>{item.location}</span>
+                      </div>
+                      <div className="flex items-center gap-2">
+                        <Icon name="Users" size={16} />
+                        <span>{item.guests}</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section id="testimonials" className="py-32">
+        <div className="container mx-auto px-6">
+          <div className="text-center mb-20 animate-fade-in">
+            <p className="text-sm tracking-widest text-muted-foreground mb-4">ОТЗЫВЫ</p>
+            <h2 className="text-5xl md:text-6xl font-light">Что говорят клиенты</h2>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-12 max-w-6xl mx-auto">
             {testimonials.map((testimonial, idx) => (
-              <Card key={idx} className="p-6 hover:shadow-xl transition-all duration-300 hover:scale-105 animate-fade-in">
-                <div className="flex gap-1 mb-4">
+              <Card key={idx} className="p-8 rounded-none border-border/50 bg-card hover:shadow-lg transition-all duration-300 animate-fade-in">
+                <div className="flex gap-1 mb-6">
                   {[...Array(testimonial.rating)].map((_, i) => (
-                    <Icon key={i} name="Star" size={20} className="text-yellow-400 fill-yellow-400" />
+                    <div key={i} className="w-1 h-1 bg-foreground rounded-full" />
                   ))}
                 </div>
-                <p className="text-muted-foreground mb-4 italic">"{testimonial.text}"</p>
-                <div className="flex justify-between items-center">
-                  <div className="font-semibold">{testimonial.name}</div>
-                  <div className="text-sm text-muted-foreground">{testimonial.date}</div>
+                <p className="text-muted-foreground font-light leading-relaxed mb-8 text-lg italic">
+                  {testimonial.text}
+                </p>
+                <div className="pt-6 border-t border-border/50">
+                  <div className="font-light text-sm tracking-wide">{testimonial.name}</div>
+                  <div className="text-xs text-muted-foreground mt-1">{testimonial.date}</div>
                 </div>
               </Card>
             ))}
@@ -243,120 +225,92 @@ const Index = () => {
         </div>
       </section>
 
-      <section id="contact" className="py-24">
-        <div className="container mx-auto px-4">
+      <section id="contact" className="py-32 bg-muted/30 border-y border-border/50">
+        <div className="container mx-auto px-6">
           <div className="max-w-4xl mx-auto">
-            <div className="text-center mb-16 animate-fade-in">
-              <h2 className="text-4xl md:text-5xl font-bold mb-6">Связаться со мной</h2>
-              <p className="text-xl text-muted-foreground">
+            <div className="text-center mb-20 animate-fade-in">
+              <p className="text-sm tracking-widest text-muted-foreground mb-4">КОНТАКТЫ</p>
+              <h2 className="text-5xl md:text-6xl font-light mb-6">Обсудим вашу свадьбу</h2>
+              <p className="text-xl text-muted-foreground font-light">
                 Оставьте заявку, и я свяжусь с вами в течение часа
               </p>
             </div>
 
-            <div className="grid md:grid-cols-2 gap-12">
-              <div className="animate-fade-in">
-                <Card className="p-8">
-                  <form onSubmit={handleSubmit} className="space-y-6">
+            <div className="grid md:grid-cols-5 gap-12">
+              <div className="md:col-span-3 animate-fade-in">
+                <Card className="p-10 rounded-none border-border/50 bg-card">
+                  <form onSubmit={handleSubmit} className="space-y-8">
                     <div>
-                      <label className="block text-sm font-medium mb-2">Ваше имя</label>
+                      <label className="block text-sm tracking-wide mb-3 font-light">Ваше имя</label>
                       <Input 
-                        placeholder="Введите ваше имя"
+                        placeholder="Имя"
                         value={formData.name}
                         onChange={(e) => setFormData({...formData, name: e.target.value})}
+                        className="rounded-none border-border/50 bg-background font-light"
                         required
                       />
                     </div>
                     <div>
-                      <label className="block text-sm font-medium mb-2">Телефон</label>
+                      <label className="block text-sm tracking-wide mb-3 font-light">Телефон</label>
                       <Input 
                         type="tel"
                         placeholder="+7 (999) 123-45-67"
                         value={formData.phone}
                         onChange={(e) => setFormData({...formData, phone: e.target.value})}
+                        className="rounded-none border-border/50 bg-background font-light"
                         required
                       />
                     </div>
                     <div>
-                      <label className="block text-sm font-medium mb-2">Сообщение</label>
+                      <label className="block text-sm tracking-wide mb-3 font-light">Сообщение</label>
                       <Textarea 
                         placeholder="Расскажите о вашей свадьбе"
                         value={formData.message}
                         onChange={(e) => setFormData({...formData, message: e.target.value})}
-                        rows={4}
+                        rows={5}
+                        className="rounded-none border-border/50 bg-background font-light resize-none"
                       />
                     </div>
-                    <Button type="submit" className="w-full bg-gradient-to-r from-primary to-secondary hover:opacity-90">
+                    <Button 
+                      type="submit" 
+                      className="w-full rounded-none py-6 bg-primary hover:bg-secondary transition-all duration-300"
+                    >
                       Отправить заявку
                     </Button>
                   </form>
                 </Card>
               </div>
 
-              <div className="space-y-6 animate-fade-in [animation-delay:200ms]">
-                <Card className="p-6 hover:shadow-xl transition-all duration-300">
-                  <div className="flex items-center gap-4">
-                    <div className="w-12 h-12 bg-gradient-to-br from-primary to-secondary rounded-xl flex items-center justify-center">
-                      <Icon name="Phone" size={24} className="text-white" />
-                    </div>
-                    <div>
-                      <div className="font-semibold">Телефон</div>
-                      <div className="text-muted-foreground">+7 (999) 123-45-67</div>
-                    </div>
+              <div className="md:col-span-2 space-y-8 animate-fade-in">
+                <div className="space-y-6">
+                  <div className="pb-6 border-b border-border/50">
+                    <p className="text-sm tracking-wide text-muted-foreground mb-2">Телефон</p>
+                    <p className="text-lg font-light">+7 (999) 123-45-67</p>
                   </div>
-                </Card>
-
-                <Card className="p-6 hover:shadow-xl transition-all duration-300">
-                  <div className="flex items-center gap-4">
-                    <div className="w-12 h-12 bg-gradient-to-br from-secondary to-accent rounded-xl flex items-center justify-center">
-                      <Icon name="Mail" size={24} className="text-white" />
-                    </div>
-                    <div>
-                      <div className="font-semibold">Email</div>
-                      <div className="text-muted-foreground">host@wedding.ru</div>
-                    </div>
+                  <div className="pb-6 border-b border-border/50">
+                    <p className="text-sm tracking-wide text-muted-foreground mb-2">Email</p>
+                    <p className="text-lg font-light">host@wedding.ru</p>
                   </div>
-                </Card>
-
-                <Card className="p-6 hover:shadow-xl transition-all duration-300">
-                  <div className="flex items-center gap-4">
-                    <div className="w-12 h-12 bg-gradient-to-br from-accent to-primary rounded-xl flex items-center justify-center">
-                      <Icon name="MessageCircle" size={24} className="text-white" />
-                    </div>
-                    <div>
-                      <div className="font-semibold">Telegram</div>
-                      <div className="text-muted-foreground">@wedding_host</div>
-                    </div>
+                  <div className="pb-6 border-b border-border/50">
+                    <p className="text-sm tracking-wide text-muted-foreground mb-2">Telegram</p>
+                    <p className="text-lg font-light">@wedding_host</p>
                   </div>
-                </Card>
+                  <div className="pb-6 border-b border-border/50">
+                    <p className="text-sm tracking-wide text-muted-foreground mb-2">Instagram</p>
+                    <p className="text-lg font-light">@wedding_host</p>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      <footer className="bg-muted/50 py-12 border-t border-border">
-        <div className="container mx-auto px-4">
-          <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-            <div className="text-center md:text-left">
-              <h3 className="text-2xl font-bold bg-gradient-to-r from-primary via-secondary to-accent bg-clip-text text-transparent mb-2">
-                Ведущий Свадеб
-              </h3>
-              <p className="text-muted-foreground">Делаю вашу свадьбу незабываемой</p>
-            </div>
-            <div className="flex gap-4">
-              <Button variant="outline" size="icon" className="rounded-full">
-                <Icon name="Instagram" size={20} />
-              </Button>
-              <Button variant="outline" size="icon" className="rounded-full">
-                <Icon name="Youtube" size={20} />
-              </Button>
-              <Button variant="outline" size="icon" className="rounded-full">
-                <Icon name="Send" size={20} />
-              </Button>
-            </div>
-          </div>
-          <div className="mt-8 pt-8 border-t border-border text-center text-muted-foreground text-sm">
-            © 2024 Все права защищены
+      <footer className="py-12 border-t border-border/50">
+        <div className="container mx-auto px-6">
+          <div className="flex flex-col md:flex-row justify-between items-center gap-6 text-sm text-muted-foreground">
+            <p className="tracking-wide font-light">© 2024 Все права защищены</p>
+            <p className="tracking-wider font-light">ВЕДУЩИЙ СВАДЕБ</p>
           </div>
         </div>
       </footer>
