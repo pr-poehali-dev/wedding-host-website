@@ -49,7 +49,7 @@ const Index = () => {
               </div>
               <h1 className="text-5xl md:text-7xl font-bold text-gray-900 leading-tight">
                 Евгений<br />
-                <span className="text-transparent">Ваш незабываемый праздник</span>
+                <span className="text-rose-600">Ваш незабываемый праздник</span>
               </h1>
               <p className="text-xl text-gray-600 leading-relaxed">
                 Поёт как бог, шутит гениально, заряжает на 100%! 
